@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://com.company.sampletransportorders/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.sampletransportorders.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="City.browse" caption="msg://com.company.sampletransportorders.screen.city/cityBrowse.menu"
+              icon="BULK_EDIT_ACTION"/>
+        <item screen="TransportOrder.browse"
+              caption="msg://com.company.sampletransportorders.screen.transportorder/transportOrderBrowse.menu"/>
+    </menu>
+
+</menu-config>

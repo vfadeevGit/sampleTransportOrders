@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="sampleTransportOrders">
+        <createTable tableName="CITY">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_CITY"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="sampleTransportOrders">
+        <createTable tableName="TRANSPORT_ORDER">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TRANSPORT_ORDER"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CREATED_BY" type="VARCHAR(255)"/>
+            <column name="CREATED_DATE" type="DATETIME"/>
+            <column name="LAST_MODIFIED_BY" type="VARCHAR(255)"/>
+            <column name="LAST_MODIFIED_DATE" type="DATETIME"/>
+            <column name="DELETED_BY" type="VARCHAR(255)"/>
+            <column name="DELETED_DATE" type="DATETIME"/>
+            <column name="INTERNAL_ID" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="INITIATOR_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CONSUMER_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CITY_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PASSENGER_COUNT" type="DECIMAL(19, 2)"/>
+            <column name="TELEPHONE" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="STATUS" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SCAN_DOCUMENT" type="VARCHAR(1024)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="sampleTransportOrders">
+        <createIndex indexName="IDX_TRANSPORTORDER" tableName="TRANSPORT_ORDER">
+            <column name="CONSUMER_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CONSUMER_ID" baseTableName="TRANSPORT_ORDER"
+                                 constraintName="FK_TRANSPORT_ORDER_ON_CONSUMER" referencedColumnNames="ID"
+                                 referencedTableName="USER_"/>
+    </changeSet>
+    <changeSet id="4" author="sampleTransportOrders">
+        <createIndex indexName="IDX_TRANSPORTORDER_CITY_ID" tableName="TRANSPORT_ORDER">
+            <column name="CITY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CITY_ID" baseTableName="TRANSPORT_ORDER"
+                                 constraintName="FK_TRANSPORT_ORDER_ON_CITY" referencedColumnNames="ID"
+                                 referencedTableName="CITY"/>
+    </changeSet>
+    <changeSet id="5" author="sampleTransportOrders" dbms="postgresql">
+        <createIndex indexName="IDX_UC_TRANSPORT_ORDER_INTERNAL" tableName="TRANSPORT_ORDER" unique="true">
+            <column name="INTERNAL_ID"/>
+        </createIndex>
+
+        <modifySql>
+            <append value="where DELETED_DATE is null"/>
+        </modifySql>
+    </changeSet>
+    <changeSet id="6" author="sampleTransportOrders">
+        <addForeignKeyConstraint baseColumnNames="INITIATOR_ID" baseTableName="TRANSPORT_ORDER"
+                                 constraintName="FK_TRANSPORTORDER_ON_INITIATOR" referencedColumnNames="ID"
+                                 referencedTableName="USER_"/>
+    </changeSet>
+</databaseChangeLog>

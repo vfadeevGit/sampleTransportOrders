@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_identitylink" constraintName="act_fk_athrz_procedef"/>
+    </changeSet>
+    <changeSet id="2" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ge_bytearray" constraintName="act_fk_bytearr_depl"/>
+    </changeSet>
+    <changeSet id="3" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_deadletter_job"
+                                  constraintName="act_fk_deadletter_job_custom_values"/>
+    </changeSet>
+    <changeSet id="4" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_deadletter_job"
+                                  constraintName="act_fk_deadletter_job_exception"/>
+    </changeSet>
+    <changeSet id="5" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_deadletter_job"
+                                  constraintName="act_fk_deadletter_job_execution"/>
+    </changeSet>
+    <changeSet id="6" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_deadletter_job"
+                                  constraintName="act_fk_deadletter_job_proc_def"/>
+    </changeSet>
+    <changeSet id="7" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_deadletter_job"
+                                  constraintName="act_fk_deadletter_job_process_instance"/>
+    </changeSet>
+    <changeSet id="8" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_event_subscr" constraintName="act_fk_event_exec"/>
+    </changeSet>
+    <changeSet id="9" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_execution" constraintName="act_fk_exe_parent"/>
+    </changeSet>
+    <changeSet id="10" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_execution" constraintName="act_fk_exe_procdef"/>
+    </changeSet>
+    <changeSet id="11" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_execution" constraintName="act_fk_exe_procinst"/>
+    </changeSet>
+    <changeSet id="12" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_execution" constraintName="act_fk_exe_super"/>
+    </changeSet>
+    <changeSet id="13" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_external_job"
+                                  constraintName="act_fk_external_job_custom_values"/>
+    </changeSet>
+    <changeSet id="14" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_external_job" constraintName="act_fk_external_job_exception"/>
+    </changeSet>
+    <changeSet id="15" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_identitylink" constraintName="act_fk_idl_procinst"/>
+    </changeSet>
+    <changeSet id="16" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_procdef_info" constraintName="act_fk_info_json_ba"/>
+    </changeSet>
+    <changeSet id="17" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_procdef_info" constraintName="act_fk_info_procdef"/>
+    </changeSet>
+    <changeSet id="18" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_job" constraintName="act_fk_job_custom_values"/>
+    </changeSet>
+    <changeSet id="19" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_job" constraintName="act_fk_job_exception"/>
+    </changeSet>
+    <changeSet id="20" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_job" constraintName="act_fk_job_execution"/>
+    </changeSet>
+    <changeSet id="21" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_job" constraintName="act_fk_job_proc_def"/>
+    </changeSet>
+    <changeSet id="22" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_job" constraintName="act_fk_job_process_instance"/>
+    </changeSet>
+    <changeSet id="23" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_id_membership" constraintName="act_fk_memb_group"/>
+    </changeSet>
+    <changeSet id="24" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_id_membership" constraintName="act_fk_memb_user"/>
+    </changeSet>
+    <changeSet id="25" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_re_model" constraintName="act_fk_model_deployment"/>
+    </changeSet>
+    <changeSet id="26" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_re_model" constraintName="act_fk_model_source"/>
+    </changeSet>
+    <changeSet id="27" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_re_model" constraintName="act_fk_model_source_extra"/>
+    </changeSet>
+    <changeSet id="28" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_id_priv_mapping" constraintName="act_fk_priv_mapping"/>
+    </changeSet>
+    <changeSet id="29" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_suspended_job"
+                                  constraintName="act_fk_suspended_job_custom_values"/>
+    </changeSet>
+    <changeSet id="30" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_suspended_job" constraintName="act_fk_suspended_job_exception"/>
+    </changeSet>
+    <changeSet id="31" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_suspended_job" constraintName="act_fk_suspended_job_execution"/>
+    </changeSet>
+    <changeSet id="32" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_suspended_job" constraintName="act_fk_suspended_job_proc_def"/>
+    </changeSet>
+    <changeSet id="33" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_suspended_job"
+                                  constraintName="act_fk_suspended_job_process_instance"/>
+    </changeSet>
+    <changeSet id="34" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_task" constraintName="act_fk_task_exe"/>
+    </changeSet>
+    <changeSet id="35" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_task" constraintName="act_fk_task_procdef"/>
+    </changeSet>
+    <changeSet id="36" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_task" constraintName="act_fk_task_procinst"/>
+    </changeSet>
+    <changeSet id="37" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_timer_job" constraintName="act_fk_timer_job_custom_values"/>
+    </changeSet>
+    <changeSet id="38" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_timer_job" constraintName="act_fk_timer_job_exception"/>
+    </changeSet>
+    <changeSet id="39" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_timer_job" constraintName="act_fk_timer_job_execution"/>
+    </changeSet>
+    <changeSet id="40" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_timer_job" constraintName="act_fk_timer_job_proc_def"/>
+    </changeSet>
+    <changeSet id="41" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_timer_job" constraintName="act_fk_timer_job_process_instance"/>
+    </changeSet>
+    <changeSet id="42" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_identitylink" constraintName="act_fk_tskass_task"/>
+    </changeSet>
+    <changeSet id="43" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_variable" constraintName="act_fk_var_bytearray"/>
+    </changeSet>
+    <changeSet id="44" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_variable" constraintName="act_fk_var_exe"/>
+    </changeSet>
+    <changeSet id="45" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="act_ru_variable" constraintName="act_fk_var_procinst"/>
+    </changeSet>
+    <changeSet id="46" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="bpm_user_group_role" constraintName="fk_bpm_ugr_on_user_group"/>
+    </changeSet>
+    <changeSet id="47" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="bpm_user_group_user" constraintName="fk_bpm_ugu_on_user_group"/>
+    </changeSet>
+    <changeSet id="48" author="sampleTransportOrders">
+        <dropForeignKeyConstraint baseTableName="flw_ru_batch_part" constraintName="flw_fk_batch_part_parent"/>
+    </changeSet>
+    <changeSet id="49" author="sampleTransportOrders">
+        <dropUniqueConstraint constraintName="act_hi_procinst_proc_inst_id__key" tableName="act_hi_procinst"/>
+    </changeSet>
+    <changeSet id="50" author="sampleTransportOrders">
+        <dropUniqueConstraint constraintName="act_uniq_info_procdef" tableName="act_procdef_info"/>
+    </changeSet>
+    <changeSet id="51" author="sampleTransportOrders">
+        <dropUniqueConstraint constraintName="act_uniq_priv_name" tableName="act_id_priv"/>
+    </changeSet>
+    <changeSet id="52" author="sampleTransportOrders">
+        <dropUniqueConstraint constraintName="act_uniq_procdef" tableName="act_re_procdef"/>
+    </changeSet>
+    <changeSet id="53" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_databasechangelog"/>
+    </changeSet>
+    <changeSet id="54" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_databasechangeloglock"/>
+    </changeSet>
+    <changeSet id="55" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_decision"/>
+    </changeSet>
+    <changeSet id="56" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_deployment"/>
+    </changeSet>
+    <changeSet id="57" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_deployment_resource"/>
+    </changeSet>
+    <changeSet id="58" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_dmn_hi_decision_execution"/>
+    </changeSet>
+    <changeSet id="59" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_evt_log"/>
+    </changeSet>
+    <changeSet id="60" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ge_bytearray"/>
+    </changeSet>
+    <changeSet id="61" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ge_property"/>
+    </changeSet>
+    <changeSet id="62" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_actinst"/>
+    </changeSet>
+    <changeSet id="63" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_attachment"/>
+    </changeSet>
+    <changeSet id="64" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_comment"/>
+    </changeSet>
+    <changeSet id="65" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_detail"/>
+    </changeSet>
+    <changeSet id="66" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_entitylink"/>
+    </changeSet>
+    <changeSet id="67" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_identitylink"/>
+    </changeSet>
+    <changeSet id="68" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_procinst"/>
+    </changeSet>
+    <changeSet id="69" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_taskinst"/>
+    </changeSet>
+    <changeSet id="70" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_tsk_log"/>
+    </changeSet>
+    <changeSet id="71" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_hi_varinst"/>
+    </changeSet>
+    <changeSet id="72" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_bytearray"/>
+    </changeSet>
+    <changeSet id="73" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_group"/>
+    </changeSet>
+    <changeSet id="74" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_info"/>
+    </changeSet>
+    <changeSet id="75" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_membership"/>
+    </changeSet>
+    <changeSet id="76" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_priv"/>
+    </changeSet>
+    <changeSet id="77" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_priv_mapping"/>
+    </changeSet>
+    <changeSet id="78" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_property"/>
+    </changeSet>
+    <changeSet id="79" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_token"/>
+    </changeSet>
+    <changeSet id="80" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_id_user"/>
+    </changeSet>
+    <changeSet id="81" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_procdef_info"/>
+    </changeSet>
+    <changeSet id="82" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_re_deployment"/>
+    </changeSet>
+    <changeSet id="83" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_re_model"/>
+    </changeSet>
+    <changeSet id="84" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_re_procdef"/>
+    </changeSet>
+    <changeSet id="85" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_actinst"/>
+    </changeSet>
+    <changeSet id="86" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_deadletter_job"/>
+    </changeSet>
+    <changeSet id="87" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_entitylink"/>
+    </changeSet>
+    <changeSet id="88" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_event_subscr"/>
+    </changeSet>
+    <changeSet id="89" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_execution"/>
+    </changeSet>
+    <changeSet id="90" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_external_job"/>
+    </changeSet>
+    <changeSet id="91" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_history_job"/>
+    </changeSet>
+    <changeSet id="92" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_identitylink"/>
+    </changeSet>
+    <changeSet id="93" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_job"/>
+    </changeSet>
+    <changeSet id="94" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_suspended_job"/>
+    </changeSet>
+    <changeSet id="95" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_task"/>
+    </changeSet>
+    <changeSet id="96" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_timer_job"/>
+    </changeSet>
+    <changeSet id="97" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="act_ru_variable"/>
+    </changeSet>
+    <changeSet id="98" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="bpm_content_storage"/>
+    </changeSet>
+    <changeSet id="99" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="bpm_user_group"/>
+    </changeSet>
+    <changeSet id="100" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="bpm_user_group_role"/>
+    </changeSet>
+    <changeSet id="101" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="bpm_user_group_user"/>
+    </changeSet>
+    <changeSet id="102" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_channel_definition"/>
+    </changeSet>
+    <changeSet id="103" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_ev_databasechangelog"/>
+    </changeSet>
+    <changeSet id="104" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_ev_databasechangeloglock"/>
+    </changeSet>
+    <changeSet id="105" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_event_definition"/>
+    </changeSet>
+    <changeSet id="106" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_event_deployment"/>
+    </changeSet>
+    <changeSet id="107" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_event_resource"/>
+    </changeSet>
+    <changeSet id="108" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_ru_batch"/>
+    </changeSet>
+    <changeSet id="109" author="sampleTransportOrders">
+        <dropTable cascadeConstraints="true" tableName="flw_ru_batch_part"/>
+    </changeSet>
+    <changeSet id="110" author="sampleTransportOrders">
+        <addNotNullConstraint columnDataType="VARCHAR(255)" columnName="TAG_PLATE" tableName="TRANSPORT_ORDER_DETAILS"
+                              validate="true"/>
+    </changeSet>
+</databaseChangeLog>

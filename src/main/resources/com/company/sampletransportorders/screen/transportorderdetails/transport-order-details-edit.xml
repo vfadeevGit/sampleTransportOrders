@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://transportOrderDetailsEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="transportOrderDetailsDc"
+                  class="com.company.sampletransportorders.entity.TransportOrderDetails">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="transportOrderDetailsDc">
+                <column width="350px">
+                    <dateField id="startDateTimeField" property="startDateTime"/>
+                    <dateField id="endDateTimeField" property="endDateTime"/>
+                    <textField id="beginPointField" property="beginPoint" inputPrompt="Enter start point here"/>
+                    <textField id="endPointField" property="endPoint"/>
+                    <textField id="tagPlateField" property="tagPlate"/>
+                </column>
+            </form>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

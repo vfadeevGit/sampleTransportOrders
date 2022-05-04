@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://transportOrderBrowse.caption"
+        focusComponent="transportOrdersTable">
+    <data readOnly="true">
+        <collection id="transportOrdersDc"
+                    class="com.company.sampletransportorders.entity.TransportOrder">
+            <fetchPlan extends="_base">
+                <property name="initiator" fetchPlan="_base"/>
+                <property name="city" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="transportOrdersDl">
+                <query>
+                    <![CDATA[select e from TransportOrder e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction"
+                caption="msg:///actions.Select"
+                icon="LOOKUP_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="lookupCancelAction"
+                caption="msg:///actions.Cancel"
+                icon="LOOKUP_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="transportOrdersTable" spacing="true">
+        <filter id="filter"
+                dataLoader="transportOrdersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="transportOrdersTable"
+                    width="100%"
+                    dataContainer="transportOrdersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="internalID"/>
+                <column id="initiator"/>
+                <column id="city"/>
+                <column id="passengerCount"/>
+                <column id="telephone"/>
+                <column id="status"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="transportOrdersTable.create"/>
+                <button id="editBtn" action="transportOrdersTable.edit"/>
+                <button id="removeBtn" action="transportOrdersTable.remove"/>
+                <button id="generateOrders" caption="msg://generateOrders.caption"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

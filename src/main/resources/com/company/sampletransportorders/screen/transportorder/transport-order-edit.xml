@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://transportOrderEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="transportOrderDc"
+                  class="com.company.sampletransportorders.entity.TransportOrder">
+            <fetchPlan extends="_base">
+                <property name="initiator" fetchPlan="_base"/>
+                <property name="consumer" fetchPlan="_base"/>
+                <property name="city" fetchPlan="_base"/>
+                <property name="details" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader/>
+            <collection id="detailsDc" property="details"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout spacing="true" expand="scrollBox">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="transportOrderDc">
+                <column width="350px">
+                    <textField id="internalIDField" property="internalID"/>
+                    <entityPicker id="initiatorField" property="initiator">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <entityPicker id="consumerField" property="consumer">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <entityPicker id="cityField" property="city">
+                        <actions>
+                            <action id="entityLookup" type="entity_lookup"/>
+                            <action id="entityClear" type="entity_clear"/>
+                        </actions>
+                    </entityPicker>
+                    <textField id="passengerCountField" property="passengerCount"/>
+                    <textField id="telephoneField" property="telephone"/>
+                    <comboBox id="statusField" property="status"/>
+                    <fileStorageUpload id="scanDocumentField" property="scanDocument"/>
+                </column>
+            </form>
+        </scrollBox>
+        <groupBox id="detailsBox" caption="msg://com.company.sampletransportorders.entity/TransportOrder.details">
+            <table id="detailsTable" dataContainer="detailsDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="startDateTime"/>
+                    <column id="endDateTime"/>
+                    <column id="beginPoint"/>
+                    <column id="endPoint"/>
+                    <column id="tagPlate"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="detailsTable.create"/>
+                    <button action="detailsTable.edit"/>
+                    <button action="detailsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
